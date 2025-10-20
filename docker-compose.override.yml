@@ -1,0 +1,20 @@
+version: '3.8'
+
+services:
+  backend:
+    command: npm run dev
+    environment:
+      - NODE_ENV=development
+      - DEBUG=true
+    volumes:
+      - ./backend:/app
+      - /app/node_modules
+
+  frontend:
+    command: npm start
+    environment:
+      - NODE_ENV=development
+      - REACT_APP_API_URL=http://localhost:3000
+    volumes:
+      - ./frontend:/app
+      - /app/node_modules
