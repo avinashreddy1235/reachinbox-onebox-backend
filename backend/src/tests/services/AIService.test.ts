@@ -1,6 +1,41 @@
 import { AIService } from '../../services';
 import { EmailCategory } from '../../config/types';
 
+// Mock OpenAI
+jest.mock('openai', () => {
+  return {
+    default: jest.fn().mockImplementation(() => ({
+      chat: {
+        completions: {
+          create: jest.fn().mockImplementation(async ({ messages }) => {
+            // Mock responses based on the input
+            if (messages[1].content.includes('URGENT')) {
+              return {
+                choices: [{ message: { content: 'URGENT' } }]
+              };
+            } else if (messages[1].content.includes('Project')) {
+              return {
+                choices: [{ message: { content: 'WORK' } }]
+              };
+            } else if (messages[1].content.includes('Birthday')) {
+              return {
+                choices: [{ message: { content: 'PERSONAL' } }]
+              };
+            } else if (messages[1].content.includes('schedule a meeting')) {
+              return {
+                choices: [{ message: { content: 'I would be happy to schedule a meeting. Please let me know your availability and I will coordinate accordingly.' } }]
+              };
+            }
+            return {
+              choices: [{ message: { content: '' } }]
+            };
+          })
+        }
+      }
+    }))
+  };
+});
+
 describe('AIService', () => {
   let aiService: AIService;
 
