@@ -1,0 +1,24 @@
+# These owners will be the default owners for everything in
+# the repo. Unless a later match takes precedence,
+# @avinashreddy1235 will be requested for review when someone 
+# opens a pull request.
+*       @avinashreddy1235
+
+# Backend Code
+/backend/src/         @avinashreddy1235
+/backend/tests/       @avinashreddy1235
+
+# Frontend Code
+/frontend/src/        @avinashreddy1235
+
+# Configuration Files
+*.json               @avinashreddy1235
+*.yml                @avinashreddy1235
+*.yaml               @avinashreddy1235
+
+# Docker Related Files
+Dockerfile           @avinashreddy1235
+docker-compose.yml   @avinashreddy1235
+
+# Documentation
+*.md                 @avinashreddy1235
