@@ -46,7 +46,18 @@ A feature-rich email aggregator that synchronizes multiple IMAP email accounts i
    ```bash
    # Clone the repository
    git clone <repository-url>
-   cd reachinbox-assignment
+   cd # ReachInbox Backend
+
+A modern email management system with AI-powered categorization and smart search capabilities.
+
+## Features
+
+- 📧 IMAP email integration
+- 🔍 Elasticsearch-powered search
+- 🤖 AI-powered email categorization
+- 📱 RESTful API endpoints
+- 🔗 Webhook integrations
+- 🐳 Docker containerization
 
    # Create .env file in backend directory
    cp backend/.env.example backend/.env
